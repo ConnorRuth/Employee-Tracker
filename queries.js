@@ -10,7 +10,7 @@ const db = mysql.createConnection(
     },
     console.log(`Connected to the employees_db database.`)
   );
-console.log(restart);
+
   function viewDepartments() {
       db.query("SELECT * FROM departments", function (err, results) {
           if (err) throw err;
