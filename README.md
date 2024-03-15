@@ -29,6 +29,7 @@ none at this time
 ## Questions
 You can find my github at https://github.com/connorRuth
 
+walkthrough video: https://drive.google.com/file/d/1JJGPUHWdo0MZZ2nkCxMPudS5GoKcWD73/view
 
 ## Licence
   Distributed under the MIT License. See https://opensource.org/licenses/MIT for more information
