@@ -84,11 +84,11 @@ function addRole() {
                     db.query("INSERT INTO roles (title, salary, department_id) VALUES (?, ?, ?)", [data.title, data.salary, depId], function (err, results) {
                         if (err) throw err;
                         console.log(`Added the role ${data.title} with a salary of ${data.salary} to the ${data.department} department to the database.`);
+                        restart();
                     });
                 } else {
                     console.log("Department not found.");
                 }
-                restart();
             });
     });
 }
@@ -196,6 +196,7 @@ function employeeRole(){
 }
 
 function exit() {
+    console.log("goodbye!");
     db.end();
 }
 function taskCase(data) {
@@ -205,27 +206,21 @@ function taskCase(data) {
         break;
       case "view all roles":
         viewRoles();
-        
         break;
       case "view all employees":
         viewEmployees();
-       
         break;
       case "add a department":
         addDepartment();
-       
         break;
       case "add a role":
         addRole();
-        
         break;
       case "add an employee":
         addEmployee();
-        
         break;
       case "update an employee role":
         employeeRole();
-        
         break;
       case "exit":
         exit();
@@ -233,16 +228,12 @@ function taskCase(data) {
     }
   }
   
-
-
   const startup = {
     type: "list",
     message: "Please select what task you would like to do?",
     name: "task",
     choices: ["view all departments", "view all roles", "view all employees", "add a department", "add a role", "add an employee", "update an employee role", "exit"]
   };
-  
-  
   
   function restart() {
     inquirer.prompt(startup)
@@ -253,7 +244,5 @@ function taskCase(data) {
         console.error("An error occurred:", error);
       });
   }
-
-
 
 module.exports = restart;
